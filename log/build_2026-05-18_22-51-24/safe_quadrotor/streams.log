@@ -1,0 +1,47 @@
+[0.583s] Invoking command in '/home/mulham-baig/drone_ws/src/safe_quadrotor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mulham-baig/drone_ws/build/safe_quadrotor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/safe_quadrotor build --build-base /home/mulham-baig/drone_ws/build/safe_quadrotor/build install --record /home/mulham-baig/drone_ws/build/safe_quadrotor/install.log --single-version-externally-managed install_data
+[0.791s] running egg_info
+[0.792s] creating ../../build/safe_quadrotor/safe_quadrotor.egg-info
+[0.805s] writing ../../build/safe_quadrotor/safe_quadrotor.egg-info/PKG-INFO
+[0.805s] writing dependency_links to ../../build/safe_quadrotor/safe_quadrotor.egg-info/dependency_links.txt
+[0.805s] writing entry points to ../../build/safe_quadrotor/safe_quadrotor.egg-info/entry_points.txt
+[0.805s] writing requirements to ../../build/safe_quadrotor/safe_quadrotor.egg-info/requires.txt
+[0.805s] writing top-level names to ../../build/safe_quadrotor/safe_quadrotor.egg-info/top_level.txt
+[0.805s] writing manifest file '../../build/safe_quadrotor/safe_quadrotor.egg-info/SOURCES.txt'
+[0.839s] reading manifest file '../../build/safe_quadrotor/safe_quadrotor.egg-info/SOURCES.txt'
+[0.840s] writing manifest file '../../build/safe_quadrotor/safe_quadrotor.egg-info/SOURCES.txt'
+[0.840s] running build
+[0.840s] running build_py
+[0.840s] creating /home/mulham-baig/drone_ws/build/safe_quadrotor/build
+[0.841s] creating /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib
+[0.841s] creating /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor
+[0.841s] copying safe_quadrotor/flight_controller.py -> /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor
+[0.841s] copying safe_quadrotor/__init__.py -> /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor
+[0.841s] copying safe_quadrotor/waypoint_navigator.py -> /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor
+[0.841s] running install
+[0.846s] running install_lib
+[0.860s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor
+[0.860s] copying /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor/flight_controller.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor
+[0.860s] copying /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor/__init__.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor
+[0.860s] copying /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor/waypoint_navigator.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor
+[0.861s] byte-compiling /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor/flight_controller.py to flight_controller.cpython-312.pyc
+[0.861s] byte-compiling /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor/__init__.py to __init__.cpython-312.pyc
+[0.861s] byte-compiling /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor/waypoint_navigator.py to waypoint_navigator.cpython-312.pyc
+[0.862s] running install_data
+[0.862s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index
+[0.862s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index
+[0.862s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index/packages
+[0.863s] copying resource/safe_quadrotor -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index/packages
+[0.863s] copying package.xml -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor
+[0.863s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/launch
+[0.863s] copying launch/spawn_drone.launch.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/launch
+[0.863s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/models
+[0.863s] copying models/drone.urdf -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/models
+[0.863s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/worlds
+[0.863s] copying worlds/obstacle_world.sdf -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/worlds
+[0.863s] running install_egg_info
+[0.880s] Copying ../../build/safe_quadrotor/safe_quadrotor.egg-info to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor-0.0.0-py3.12.egg-info
+[0.880s] running install_scripts
+[0.975s] Installing flight_controller script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+[0.975s] Installing waypoint_navigator script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+[0.975s] writing list of installed files to '/home/mulham-baig/drone_ws/build/safe_quadrotor/install.log'
+[0.992s] Invoked command in '/home/mulham-baig/drone_ws/src/safe_quadrotor' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mulham-baig/drone_ws/build/safe_quadrotor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/safe_quadrotor build --build-base /home/mulham-baig/drone_ws/build/safe_quadrotor/build install --record /home/mulham-baig/drone_ws/build/safe_quadrotor/install.log --single-version-externally-managed install_data

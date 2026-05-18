@@ -1,0 +1,51 @@
+[0.519s] Invoking command in '/home/mulham-baig/drone_ws/src/safe_quadrotor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mulham-baig/drone_ws/build/safe_quadrotor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/safe_quadrotor build --build-base /home/mulham-baig/drone_ws/build/safe_quadrotor/build install --record /home/mulham-baig/drone_ws/build/safe_quadrotor/install.log --single-version-externally-managed install_data
+[0.737s] running egg_info
+[0.737s] creating ../../build/safe_quadrotor/safe_quadrotor.egg-info
+[0.748s] writing ../../build/safe_quadrotor/safe_quadrotor.egg-info/PKG-INFO
+[0.748s] writing dependency_links to ../../build/safe_quadrotor/safe_quadrotor.egg-info/dependency_links.txt
+[0.748s] writing entry points to ../../build/safe_quadrotor/safe_quadrotor.egg-info/entry_points.txt
+[0.748s] writing requirements to ../../build/safe_quadrotor/safe_quadrotor.egg-info/requires.txt
+[0.748s] writing top-level names to ../../build/safe_quadrotor/safe_quadrotor.egg-info/top_level.txt
+[0.748s] writing manifest file '../../build/safe_quadrotor/safe_quadrotor.egg-info/SOURCES.txt'
+[0.772s] reading manifest file '../../build/safe_quadrotor/safe_quadrotor.egg-info/SOURCES.txt'
+[0.772s] writing manifest file '../../build/safe_quadrotor/safe_quadrotor.egg-info/SOURCES.txt'
+[0.773s] running build
+[0.773s] running build_py
+[0.773s] creating /home/mulham-baig/drone_ws/build/safe_quadrotor/build
+[0.773s] creating /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib
+[0.773s] creating /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor
+[0.773s] copying safe_quadrotor/flight_controller.py -> /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor
+[0.773s] copying safe_quadrotor/__init__.py -> /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor
+[0.773s] copying safe_quadrotor/safety_monitor.py -> /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor
+[0.773s] copying safe_quadrotor/waypoint_navigator.py -> /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor
+[0.773s] running install
+[0.778s] running install_lib
+[0.791s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor
+[0.791s] copying /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor/flight_controller.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor
+[0.791s] copying /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor/__init__.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor
+[0.791s] copying /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor/safety_monitor.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor
+[0.791s] copying /home/mulham-baig/drone_ws/build/safe_quadrotor/build/lib/safe_quadrotor/waypoint_navigator.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor
+[0.792s] byte-compiling /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor/flight_controller.py to flight_controller.cpython-312.pyc
+[0.792s] byte-compiling /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor/__init__.py to __init__.cpython-312.pyc
+[0.792s] byte-compiling /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor/safety_monitor.py to safety_monitor.cpython-312.pyc
+[0.793s] byte-compiling /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor/waypoint_navigator.py to waypoint_navigator.cpython-312.pyc
+[0.793s] running install_data
+[0.794s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index
+[0.794s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index
+[0.794s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index/packages
+[0.794s] copying resource/safe_quadrotor -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index/packages
+[0.794s] copying package.xml -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor
+[0.794s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/launch
+[0.794s] copying launch/spawn_drone.launch.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/launch
+[0.794s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/models
+[0.794s] copying models/drone.urdf -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/models
+[0.794s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/worlds
+[0.795s] copying worlds/obstacle_world.sdf -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/worlds
+[0.795s] running install_egg_info
+[0.813s] Copying ../../build/safe_quadrotor/safe_quadrotor.egg-info to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe_quadrotor-0.0.0-py3.12.egg-info
+[0.813s] running install_scripts
+[0.903s] Installing flight_controller script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+[0.903s] Installing safety_monitor script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+[0.903s] Installing waypoint_navigator script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+[0.904s] writing list of installed files to '/home/mulham-baig/drone_ws/build/safe_quadrotor/install.log'
+[0.927s] Invoked command in '/home/mulham-baig/drone_ws/src/safe_quadrotor' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mulham-baig/drone_ws/build/safe_quadrotor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/safe_quadrotor build --build-base /home/mulham-baig/drone_ws/build/safe_quadrotor/build install --record /home/mulham-baig/drone_ws/build/safe_quadrotor/install.log --single-version-externally-managed install_data
