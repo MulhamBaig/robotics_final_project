@@ -1,4 +1,5 @@
 [console_scripts]
+cbf_qp_controller = safe_quadrotor.cbf_qp_controller:main
 flight_controller = safe_quadrotor.flight_controller:main
 safety_monitor = safe_quadrotor.safety_monitor:main
 waypoint_navigator = safe_quadrotor.waypoint_navigator:main

@@ -1,0 +1,31 @@
+running develop
+running egg_info
+creating safe_quadrotor.egg-info
+writing safe_quadrotor.egg-info/PKG-INFO
+writing dependency_links to safe_quadrotor.egg-info/dependency_links.txt
+writing entry points to safe_quadrotor.egg-info/entry_points.txt
+writing requirements to safe_quadrotor.egg-info/requires.txt
+writing top-level names to safe_quadrotor.egg-info/top_level.txt
+writing manifest file 'safe_quadrotor.egg-info/SOURCES.txt'
+reading manifest file 'safe_quadrotor.egg-info/SOURCES.txt'
+writing manifest file 'safe_quadrotor.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe-quadrotor.egg-link (link to .)
+Installing cbf_qp_controller script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+Installing flight_controller script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+Installing safety_monitor script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+Installing waypoint_navigator script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+
+Installed /home/mulham-baig/drone_ws/build/safe_quadrotor
+running symlink_data
+creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index
+creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index
+creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index/packages
+symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/resource/safe_quadrotor -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index/packages
+symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/package.xml -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor
+creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/launch
+symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/launch/spawn_drone.launch.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/launch
+creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/models
+symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/models/drone.urdf -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/models
+creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/worlds
+symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/worlds/obstacle_world.sdf -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/worlds

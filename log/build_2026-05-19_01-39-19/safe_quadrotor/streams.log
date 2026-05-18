@@ -1,0 +1,33 @@
+[0.559s] Invoking command in '/home/mulham-baig/drone_ws/build/safe_quadrotor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mulham-baig/drone_ws/build/safe_quadrotor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mulham-baig/drone_ws/build/safe_quadrotor/build --no-deps symlink_data
+[0.765s] running develop
+[0.880s] running egg_info
+[0.880s] creating safe_quadrotor.egg-info
+[0.891s] writing safe_quadrotor.egg-info/PKG-INFO
+[0.891s] writing dependency_links to safe_quadrotor.egg-info/dependency_links.txt
+[0.891s] writing entry points to safe_quadrotor.egg-info/entry_points.txt
+[0.891s] writing requirements to safe_quadrotor.egg-info/requires.txt
+[0.891s] writing top-level names to safe_quadrotor.egg-info/top_level.txt
+[0.891s] writing manifest file 'safe_quadrotor.egg-info/SOURCES.txt'
+[0.913s] reading manifest file 'safe_quadrotor.egg-info/SOURCES.txt'
+[0.913s] writing manifest file 'safe_quadrotor.egg-info/SOURCES.txt'
+[0.928s] running build_ext
+[0.928s] Creating /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages/safe-quadrotor.egg-link (link to .)
+[0.928s] Installing cbf_qp_controller script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+[0.929s] Installing flight_controller script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+[0.929s] Installing safety_monitor script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+[0.929s] Installing waypoint_navigator script to /home/mulham-baig/drone_ws/install/safe_quadrotor/lib/safe_quadrotor
+[0.929s] 
+[0.929s] Installed /home/mulham-baig/drone_ws/build/safe_quadrotor
+[0.929s] running symlink_data
+[0.929s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index
+[0.929s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index
+[0.929s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index/packages
+[0.929s] symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/resource/safe_quadrotor -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/ament_index/resource_index/packages
+[0.929s] symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/package.xml -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor
+[0.929s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/launch
+[0.929s] symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/launch/spawn_drone.launch.py -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/launch
+[0.929s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/models
+[0.929s] symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/models/drone.urdf -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/models
+[0.929s] creating /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/worlds
+[0.929s] symbolically linking /home/mulham-baig/drone_ws/build/safe_quadrotor/worlds/obstacle_world.sdf -> /home/mulham-baig/drone_ws/install/safe_quadrotor/share/safe_quadrotor/worlds
+[0.949s] Invoked command in '/home/mulham-baig/drone_ws/build/safe_quadrotor' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mulham-baig/drone_ws/build/safe_quadrotor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mulham-baig/drone_ws/install/safe_quadrotor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mulham-baig/drone_ws/build/safe_quadrotor/build --no-deps symlink_data

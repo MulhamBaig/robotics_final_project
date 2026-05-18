@@ -4,3 +4,6 @@ source;share/safe_quadrotor/hook/pythonpath.sh
 source;share/safe_quadrotor/hook/ament_prefix_path.ps1
 source;share/safe_quadrotor/hook/ament_prefix_path.dsv
 source;share/safe_quadrotor/hook/ament_prefix_path.sh
+source;../../build/safe_quadrotor/share/safe_quadrotor/hook/pythonpath_develop.ps1
+source;../../build/safe_quadrotor/share/safe_quadrotor/hook/pythonpath_develop.dsv
+source;../../build/safe_quadrotor/share/safe_quadrotor/hook/pythonpath_develop.sh

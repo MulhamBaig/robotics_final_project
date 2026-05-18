@@ -28,6 +28,7 @@ setup(
             'flight_controller = safe_quadrotor.flight_controller:main',
             'waypoint_navigator = safe_quadrotor.waypoint_navigator:main',
             'safety_monitor = safe_quadrotor.safety_monitor:main',
+            'cbf_qp_controller = safe_quadrotor.cbf_qp_controller:main',
         ],
     },
 )
