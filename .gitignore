@@ -1,3 +1,27 @@
+## Build and install artifacts
+/build/
+/install/
+/log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtualenvs
+venv/
+venv_robo/
+.venv/
+
+# Editor/IDE
+.vscode/
+*.swp
+
+# OS files
+.DS_Store
+
+# Colcon
+.colcon/
 __pycache__/
 *.pyc
 *.pyo

@@ -43,7 +43,7 @@ def generate_launch_description():
         arguments=[
             '/model/simple_drone/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
             '/model/simple_drone/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry',
-            '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan'
+            '/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan'
         ],
         output='screen'
     )

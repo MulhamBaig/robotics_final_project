@@ -5,6 +5,7 @@
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
     </physics>
+
     <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
     <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
     <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
@@ -22,30 +23,31 @@
       <static>true</static>
       <link name="link">
         <collision name="collision">
-          <geometry><plane><normal>0 0 1</normal><size>100 100</size></plane></geometry>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><plane><normal>0 0 1</normal><size>100 100</size></plane></geometry>
-          <material><ambient>0.6 0.6 0.6 1</ambient><diffuse>0.6 0.6 0.6 1</diffuse></material>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+          </material>
         </visual>
       </link>
     </model>
 
-    <model name="cylinder_1">
-      <pose>1.5 1.5 1.0 0 0 0</pose> <static>true</static>
-      <link name="link">
-        <collision name="collision">
-          <geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry>
-        </collision>
-        <visual name="visual">
-          <geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry>
-          <material><ambient>0.8 0.1 0.1 1</ambient><diffuse>0.8 0.1 0.1 1</diffuse></material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="cylinder_2">
-      <pose>2.5 1.0 1.0 0 0 0</pose>
+    <!-- 4 red center slalom cylinders -->
+    <model name="cyl_center_1">
+      <pose>3.0 0.5 1.0 0 0 0</pose>
       <static>true</static>
       <link name="link">
         <collision name="collision">
@@ -54,6 +56,107 @@
         <visual name="visual">
           <geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry>
           <material><ambient>0.8 0.1 0.1 1</ambient><diffuse>0.8 0.1 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="cyl_center_2">
+      <pose>6.0 -0.5 1.0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry>
+          <material><ambient>0.8 0.1 0.1 1</ambient><diffuse>0.8 0.1 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="cyl_center_3">
+      <pose>9.0 0.5 1.0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry>
+          <material><ambient>0.8 0.1 0.1 1</ambient><diffuse>0.8 0.1 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="cyl_center_4">
+      <pose>12.0 -0.5 1.0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry>
+          <material><ambient>0.8 0.1 0.1 1</ambient><diffuse>0.8 0.1 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 8 blue guardrail cylinders (4 left + 4 right) -->
+    <model name="cyl_wall_1_L"><pose>3.0 4.0 1.0 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry></collision><visual name="visual"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry><material><ambient>0.2 0.2 0.8 1</ambient><diffuse>0.2 0.2 0.8 1</diffuse></material></visual></link></model>
+    <model name="cyl_wall_2_L"><pose>6.0 4.0 1.0 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry></collision><visual name="visual"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry><material><ambient>0.2 0.2 0.8 1</ambient><diffuse>0.2 0.2 0.8 1</diffuse></material></visual></link></model>
+    <model name="cyl_wall_3_L"><pose>9.0 4.0 1.0 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry></collision><visual name="visual"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry><material><ambient>0.2 0.2 0.8 1</ambient><diffuse>0.2 0.2 0.8 1</diffuse></material></visual></link></model>
+    <model name="cyl_wall_4_L"><pose>12.0 4.0 1.0 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry></collision><visual name="visual"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry><material><ambient>0.2 0.2 0.8 1</ambient><diffuse>0.2 0.2 0.8 1</diffuse></material></visual></link></model>
+
+    <model name="cyl_wall_1_R"><pose>3.0 -4.0 1.0 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry></collision><visual name="visual"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry><material><ambient>0.2 0.2 0.8 1</ambient><diffuse>0.2 0.2 0.8 1</diffuse></material></visual></link></model>
+    <model name="cyl_wall_2_R"><pose>6.0 -4.0 1.0 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry></collision><visual name="visual"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry><material><ambient>0.2 0.2 0.8 1</ambient><diffuse>0.2 0.2 0.8 1</diffuse></material></visual></link></model>
+    <model name="cyl_wall_3_R"><pose>9.0 -4.0 1.0 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry></collision><visual name="visual"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry><material><ambient>0.2 0.2 0.8 1</ambient><diffuse>0.2 0.2 0.8 1</diffuse></material></visual></link></model>
+    <model name="cyl_wall_4_R"><pose>12.0 -4.0 1.0 0 0 0</pose><static>true</static><link name="link"><collision name="collision"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry></collision><visual name="visual"><geometry><cylinder><radius>0.3</radius><length>2.0</length></cylinder></geometry><material><ambient>0.2 0.2 0.8 1</ambient><diffuse>0.2 0.2 0.8 1</diffuse></material></visual></link></model>
+
+    <!-- Visual target marker at x=15 -->
+    <model name="visual_target_beacon">
+      <static>true</static>
+      <pose>15.0 0.0 0.01 0 0 0</pose>
+      <link name="target_link">
+        <visual name="ground_pad">
+          <geometry>
+            <cylinder>
+              <radius>0.6</radius>
+              <length>0.01</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.0 0.4</ambient>
+            <diffuse>0.0 1.0 0.0 0.4</diffuse>
+            <emissive>0.0 0.6 0.0 1.0</emissive>
+          </material>
+        </visual>
+        <visual name="vertical_guide_pillar">
+          <pose>0 0 1.0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.0 0.15</ambient>
+            <diffuse>0.0 1.0 0.0 0.15</diffuse>
+            <emissive>0.0 0.3 0.0 1.0</emissive>
+          </material>
+        </visual>
+        <visual name="floating_target_bubble">
+          <pose>0 0 2.0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.25</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.3 0.7</ambient>
+            <diffuse>0.0 1.0 0.3 0.7</diffuse>
+            <emissive>0.0 0.8 0.2 1.0</emissive>
+          </material>
         </visual>
       </link>
     </model>

@@ -17,12 +17,26 @@ class CBFQPController(Node):
         self.timer = self.create_timer(0.05, self.control_loop)
         
         # System Parameters
-        self.target = np.array([3.0, 3.0, 2.0])
-        
-        # Obstacle coordinates
+        # Target is the visual beacon at x=15 in obstacle_world.sdf
+        self.target = np.array([15.0, 0.0, 2.0])
+
+        # Obstacle coordinates (must match obstacle_world.sdf)
         self.obstacles = [
-            np.array([1.5, 1.5]), # Cylinder 1
-            np.array([2.5, 1.0])  # Cylinder 2
+            # Center slalom (red)
+            np.array([3.0, 0.5]),
+            np.array([6.0, -0.5]),
+            np.array([9.0, 0.5]),
+            np.array([12.0, -0.5]),
+            # Left guardrail (blue)
+            np.array([3.0, 4.0]),
+            np.array([6.0, 4.0]),
+            np.array([9.0, 4.0]),
+            np.array([12.0, 4.0]),
+            # Right guardrail (blue)
+            np.array([3.0, -4.0]),
+            np.array([6.0, -4.0]),
+            np.array([9.0, -4.0]),
+            np.array([12.0, -4.0]),
         ]
         
         # CBF and CLF Parameters
@@ -116,8 +130,13 @@ class CBFQPController(Node):
         twist.linear.z = u_safe[2]
         self.cmd_pub.publish(twist)
         
-        dist_to_cyl1 = np.sqrt((self.current_pos[0]-1.5)**2 + (self.current_pos[1]-1.5)**2)
-        self.get_logger().info(f'Navigating... Target Dist: {dist_to_target:.2f}m | Cyl1 Dist: {dist_to_cyl1:.2f}m', throttle_duration_sec=0.5)
+        nearest_obs_dist = min(
+            [np.sqrt((self.current_pos[0] - obs[0])**2 + (self.current_pos[1] - obs[1])**2) for obs in self.obstacles]
+        )
+        self.get_logger().info(
+            f'Navigating... Target Dist: {dist_to_target:.2f}m | Nearest Obs Dist: {nearest_obs_dist:.2f}m',
+            throttle_duration_sec=0.5
+        )
 
 
 def main(args=None):
