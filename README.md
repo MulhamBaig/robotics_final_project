@@ -15,53 +15,138 @@ This repository contains a ROS 2 Jazzy and Gazebo simulation package for a quadr
 - **Simulator:** Gazebo Harmonic (or current Gazebo Sim compatible with Jazzy)
 - **Python Dependencies:** `cvxpy`, `osqp` (Installed within a local virtual environment `venv_robo`)
 
-## Build and Run Instructions
+## Video Demo Runbook (No-Missing-Steps)
 
-### 1. Build the Workspace (System Python)
-Ensure you are using the standard system Python to build the workspace to prevent ROS 2 metadata corruption.
+This project uses **system ROS/Python** for Gazebo + ROS nodes, and uses the **local virtualenv** `venv_robo` only for the CBF-QP controller.
+
+Important:
+- Your machine exports `ROS_DOMAIN_ID=10` in `~/.bashrc`. All terminals must use the **same** ROS domain or nodes won’t see each other.
+- The helper scripts below force `ROS_DOMAIN_ID=10` and also clear any accidentally-inherited overlays from other workspaces.
+
+### 0) One-time setup
 ```bash
 cd ~/drone_ws
-conda deactivate
+chmod +x scripts/*.sh
+```
+
+### 1) Clean build (recommended before recording)
+```bash
+cd ~/drone_ws
+./scripts/clean_build.sh
+```
+
+### 2) Run the 3 terminals (recommended)
+
+Terminal 1 (Gazebo + spawn + bridge):
+```bash
+cd ~/drone_ws
+./scripts/terminal1_sim.sh
+```
+
+Terminal 2 (Safety monitor):
+```bash
+cd ~/drone_ws
+./scripts/terminal2_safety.sh
+```
+
+Terminal 3 (CBF-QP controller; uses `venv_robo`):
+```bash
+cd ~/drone_ws
+./scripts/terminal3_controller.sh
+```
+
+### 3) Quick “is it working?” checks
+Run these in any extra terminal (system ROS):
+```bash
+cd ~/drone_ws
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+export ROS_DOMAIN_ID=10
+
+# Expect ~50 Hz
+ros2 topic hz /model/simple_drone/odometry
+
+# Expect ~10 Hz
+ros2 topic hz /scan
+```
+
+### 4) Stop
+In each terminal press `Ctrl+C`.
+
+If Gazebo got stuck running in the background, you can stop it with:
+```bash
+pkill -f "gz sim" || true
+```
+
+## Verified Demo Run
+
+- Date: 2026-05-26
+- Status: End-to-end demo completed successfully on this machine. The drone navigated to the target, avoided obstacles, and reached the beacon while the safety monitor and CBF-QP controller ran concurrently.
+- Notes: This run validated the DDS domain fix (`ROS_DOMAIN_ID=10`) and the venv split (controller runs inside `venv_robo`). See `mylogs.md` for details and the git commit that recorded these changes.
+
+## Manual Commands (if you don’t want scripts)
+
+### Clean build
+```bash
+cd ~/drone_ws
+
+# Keep all terminals in the same DDS domain
+export ROS_DOMAIN_ID=10
+
+# If you use conda or any other venv, get out of it for building
+conda deactivate 2>/dev/null || true
+deactivate 2>/dev/null || true
+
+# Avoid GUI/plugin env quirks
+unset GTK_PATH GIO_MODULE_DIR
+
+# Avoid inheriting overlays from other workspaces
+unset AMENT_PREFIX_PATH COLCON_PREFIX_PATH CMAKE_PREFIX_PATH PYTHONPATH
+
+rm -rf build/ install/ log/
+find src -type d -name "__pycache__" -prune -exec rm -rf {} +
+find src -type f -name "*.pyc" -delete
+
 source /opt/ros/jazzy/setup.bash
 colcon build --packages-select safe_quadrotor --symlink-install
+```
 
-2. Launching the Simulation (Terminal 1)
-
-Open a terminal and launch the Gazebo world and drone bridge natively:
-Bash
-
+### Terminal 1 (sim + spawn + bridge)
+```bash
 cd ~/drone_ws
-conda deactivate
+export ROS_DOMAIN_ID=10
+conda deactivate 2>/dev/null || true
+deactivate 2>/dev/null || true
+unset GTK_PATH GIO_MODULE_DIR
+unset AMENT_PREFIX_PATH COLCON_PREFIX_PATH CMAKE_PREFIX_PATH PYTHONPATH
 source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 ros2 launch safe_quadrotor spawn_drone.launch.py
+```
 
-(Note: Ignore any Gtk-Message warnings regarding canberra-gtk-module)
-3. Run the Safety Monitor (Terminal 2)
-
-Open a second terminal and start the safety node natively:
-Bash
-
+### Terminal 2 (safety)
+```bash
 cd ~/drone_ws
-conda deactivate
+export ROS_DOMAIN_ID=10
+conda deactivate 2>/dev/null || true
+deactivate 2>/dev/null || true
+unset GTK_PATH GIO_MODULE_DIR
+unset AMENT_PREFIX_PATH COLCON_PREFIX_PATH CMAKE_PREFIX_PATH PYTHONPATH
 source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 ros2 run safe_quadrotor safety_monitor
+```
 
-4. Start the CBF-QP Controller (Terminal 3)
-
-Because the controller requires isolated math libraries (cvxpy), we execute the script directly from the source directory while activating the local virtual environment.
-Bash
-
+### Terminal 3 (controller; venv only here)
+```bash
 cd ~/drone_ws
-conda deactivate
+export ROS_DOMAIN_ID=10
+conda deactivate 2>/dev/null || true
+unset GTK_PATH GIO_MODULE_DIR
+unset AMENT_PREFIX_PATH COLCON_PREFIX_PATH CMAKE_PREFIX_PATH PYTHONPATH
 source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 
-# Activate the virtual environment
 source venv_robo/bin/activate
-
-# Execute the controller directly
 python3 src/safe_quadrotor/safe_quadrotor/cbf_qp_controller.py
-
-Watch the drone fly toward its target, intelligently side-step obstacles to break deadlocks, and reach its goal safely!
+```

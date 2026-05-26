@@ -13,6 +13,23 @@
 
 ## 📝 Development Logs (Completed Work)
 
+### [Completed] May 26, 2026: Stable “Video Demo” Runbook + Runtime Fix
+- **Root cause of “topics exist but no messages / drone not moving”:** DDS discovery mismatch across terminals caused by inconsistent `ROS_DOMAIN_ID` usage.
+	- `~/.bashrc` exports `ROS_DOMAIN_ID=10`, but some runs were started in shells/environments that didn’t match, so nodes couldn’t discover each other.
+- **Secondary fix:** helper scripts originally used `set -u` (nounset), which can break `/opt/ros/jazzy/setup.bash` due to unset variables.
+- **Solution implemented:** helper scripts now force `ROS_DOMAIN_ID=10`, clear inherited overlay env vars (e.g., from other workspaces), and avoid `set -u`.
+- **Validated after fix (ROS-side):**
+	- `/model/simple_drone/odometry` bridged at ~50 Hz
+	- `/scan` bridged at ~10 Hz
+	- controller subscribes to odometry and publishes `/model/simple_drone/cmd_vel`
+- **Runbook:** documented in `README.md` with both script-based and manual commands.
+
+### [Verified] May 26, 2026: Demo Run Success
+- Verified an end-to-end demo run where the quadrotor navigated to the beacon and avoided obstacles using the CBF-QP controller.
+- Confirmed ROS bridge rates: `/model/simple_drone/odometry` ~50 Hz, `/scan` ~10 Hz.
+- Actions taken: updated helper scripts to enforce `ROS_DOMAIN_ID=10`, cleared overlay env vars, and avoided `set -u` in runner scripts.
+- This commit contains the documentation and script hardening for repeatable demo recordings.
+
 ### [Completed] Phase 1: Environment Setup & Drone Spawning
 - Initialized `~/drone_ws/src` and created the `safe_quadrotor` ROS 2 package.
 - Built the URDF structure for the quadrotor (base_link, rotors).
